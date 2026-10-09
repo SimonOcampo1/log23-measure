@@ -1,18 +1,18 @@
 cff-version: 1.2.0
 message: "Please cite the versioned preprint when using this work."
 type: software
-title: "Formal sources for An upper bound of three for the irrationality exponent of log 3 / log 2"
+title: "Rational approximation to log₂ 3 — formal sources"
 authors:
   - family-names: Jha
     given-names: Rohit Kumar
-version: v1
+version: v1.1
 date-released: 2026-10-09
 url: "https://github.com/rohitkrjha/log23-measure"
 repository-code: "https://github.com/rohitkrjha/log23-measure"
 license: Apache-2.0
 preferred-citation:
   type: unpublished
-  title: "An upper bound of three for the irrationality exponent of log 3 / log 2"
+  title: "Rational approximation to log₂ 3"
   authors:
     - family-names: Jha
       given-names: Rohit Kumar

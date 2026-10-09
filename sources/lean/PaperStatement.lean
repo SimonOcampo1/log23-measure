@@ -1,6 +1,6 @@
 import LogarithmExtension.LogRatioMain
 
-/- The ASCII theorem type printed in the manuscript, with its proof. -/
+/- An ASCII restatement of the manuscript's main theorem, with its proof. -/
 namespace Log23Paper
 
 theorem logRatio_approximation_bound

@@ -1,4 +1,4 @@
-AN UPPER BOUND OF THREE FOR THE IRRATIONALITY EXPONENT OF log 3 / log 2
+RATIONAL APPROXIMATION TO log₂ 3
 Lean source supplement
 
 THEOREM
@@ -12,10 +12,6 @@ THEOREM
   for every integer p and every natural q >= Q.
 
   Consequently:  2 <= mu(theta) <= 3.
-
-This is an upper bound, not a proof that the exponent equals three.
-The theorem does not assume any interpolation, matrix rank, nonzero
-determinant, analytic estimate, or exceptional-approximation hypothesis.
 
 PINNED DEPENDENCIES
 
@@ -49,8 +45,8 @@ The main theorem is in:
   namespace LogarithmExtension.LogRatio.Main
   theorem logRatio_approximation_bound
 
-PaperStatement.lean checks the ASCII theorem type printed in the
-manuscript against that endpoint.
+PaperStatement.lean checks an ASCII restatement of the manuscript's
+main theorem against that endpoint.
 
 The kernel verifier traverses all dependencies of 127 selected roots,
 checks every referenced axiom, rejects unsafe and partial dependencies,
@@ -77,11 +73,6 @@ STRUCTURE
     LogRatioParameterChoice, LogRatioPackingCancellation,
     LogRatioParameterContradiction, LogRatioApproximationSelection,
     LogRatioWeightSeparation, LogRatioAdmissibleData, LogRatioMain.
-
-Only the local import closure and the verifier are included. Some
-shared modules retain historical definitions or audit results not used
-as theorem assumptions. Their presence is not an additional mathematical
-claim of this paper.
 
 INTEGRITY AND LICENSES
 

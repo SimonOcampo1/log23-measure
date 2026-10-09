@@ -1,12 +1,10 @@
 We prove that the irrationality exponent of
-\(\theta=\log 3/\log 2\) is at most three. More precisely, for every
+\(\theta=\log_2 3\) is at most three. More precisely, for every
 \(\varepsilon>0\), every sufficiently large positive integer \(q\), and
 every integer \(p\), one has
 \(\lvert\theta-p/q\rvert\geq q^{-3-\varepsilon}\).
 The proof combines weighted interpolation at the points
 \((2^j,3^j)\) with denominator clearing and a joint count of auxiliary
 and analytic Taylor indices. A curve inequality establishes the required
-interpolation, and explicit rational parameter choices give a contradiction
-for each approximation exponent greater than three. All auxiliary data
-are fixed before the interpolation degree tends to infinity.
-The complete upper-bound theorem is also formalized in Lean.
+interpolation, and a choice of rational parameters yields the bound.
+The proof is formalized in Lean.

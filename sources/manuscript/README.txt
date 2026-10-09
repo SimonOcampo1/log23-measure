@@ -1,6 +1,6 @@
 MANUSCRIPT SOURCE
 
-An upper bound of three for the irrationality exponent of log 3 / log 2
+Rational approximation to log₂ 3
 Rohit Kumar Jha
 
 Build either or both versions with a standard TeX Live installation:
@@ -9,9 +9,8 @@ Build either or both versions with a standard TeX Live installation:
   latexmk -pdf -interaction=nonstopmode -halt-on-error tlms.tex
 
 zenodo.tex is the standalone article-style preprint.
-tlms.tex is an AMS-style manuscript for initial submission to the
-Transactions of the London Mathematical Society. It is not publisher
-typesetting or an accepted version.
+tlms.tex is an AMS-style manuscript for the
+Transactions of the London Mathematical Society.
 
 Both wrappers read the same abstract, body, theorem statements,
 proof sections, references, and AI declaration.

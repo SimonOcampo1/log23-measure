@@ -1,42 +1,36 @@
-AN UPPER BOUND OF THREE FOR THE IRRATIONALITY EXPONENT OF log 3 / log 2
+RATIONAL APPROXIMATION TO log₂ 3
 Rohit Kumar Jha
 
-Read log23-measure-v1.pdf first.
+Paper: log23-measure-v1.pdf
+DOI: https://doi.org/10.5281/zenodo.23256301
+Code: https://github.com/rohitkrjha/log23-measure
 
-Repository: https://github.com/rohitkrjha/log23-measure
+RESULT
 
-For every epsilon > 0, the paper proves
+For every epsilon > 0, every sufficiently large positive integer q,
+and every integer p,
 
-      |log(3)/log(2) - p/q| >= 1 / q^(3 + epsilon)
+      |log(3)/log(2) - p/q| >= 1 / q^(3 + epsilon).
 
-for every integer p and all sufficiently large natural denominators q.
-Consequently 2 <= mu(log(3)/log(2)) <= 3. Equality with three is not claimed.
+Consequently, 2 <= mu(log(3)/log(2)) <= 3.
 
 FILES
 
   log23-measure-v1.pdf
-    Standalone preprint.
+    Paper.
 
   log23-measure-v1-manuscript-source.zip
-    TeX sources for the preprint and its TLMS initial-submission layout.
-    Both versions share the same mathematical text.
+    LaTeX sources for the preprint and journal layouts.
 
   log23-measure-v1-lean-source.zip
-    Formal proof, exact local import closure, pinned dependencies,
-    verifier, licenses, source inventory, and build instructions.
+    Formal proof, pinned dependencies, verifier, licenses,
+    source inventory, and reproduction instructions.
 
   VERIFICATION.txt
-    Scope and results of the formal and package checks.
+    Formal-verification and package-check record.
 
   RIGHTS.txt
-    CC BY 4.0 manuscript license and Apache 2.0 code-license statement.
-    Third-party code retains its existing licenses.
+    Manuscript, software, and third-party license information.
 
   SHA256SUMS.txt
-    File integrity checksums.
-
-The paper is a preprint, not a journal Version of Record.
-The publication-specific theorem statement is checked in PaperStatement.lean.
-The principal result is in LogarithmExtension/LogRatioMain.lean.
-ARCHIVE DOI: https://doi.org/10.5281/zenodo.23256301
-
+    SHA-256 checksums for the deposit files.

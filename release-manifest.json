@@ -1,16 +1,17 @@
 {
   "paper": "log23-measure",
-  "version": "v1",
-  "title": "An upper bound of three for the irrationality exponent of log 3 / log 2",
+  "version": "v1.1",
+  "deposit_version": "v1",
+  "title": "Rational approximation to log\u2082 3",
   "doi": "10.5281/zenodo.23256301",
   "files": {
-    "log23-measure-v1.pdf": "a0ffd3adf5b9ce1109d491404c17bb2427d338b3bb62fdc89b7da5aac7e583fe",
-    "log23-measure-v1-manuscript-source.zip": "37cab1b34a25e203d84cfbec201e34a06323b52261612b09d13f0f889f6376de",
-    "log23-measure-v1-lean-source.zip": "a90bab903bc2f2b052cc1879437d7e46e902ec0c2d49e2257230b2f8fd5c82f1",
-    "README.txt": "9e49345fff9f3f57902b2e790244c9839c533a5a5c4166d1ee8eb7ef353049b5",
+    "log23-measure-v1.pdf": "1f6fc71bfa57a8820ed7cd2207244ffd9f4f2c7f00e87b418e4f2a3b12fd47ff",
+    "log23-measure-v1-manuscript-source.zip": "f133fa9f806f68179ee6f14814a5eaa3297ca596fe8378af49805f373e49ad81",
+    "log23-measure-v1-lean-source.zip": "ed546226de97df5333e72e3c4035852465c865643d57f7b0da683f821d534856",
+    "README.txt": "9e9307a157a3a1d8027ec2a4c2a2ad8496f7f12edf318b80d749b4e39bd0835c",
     "RIGHTS.txt": "22badfc45d703534049bc3cafe47e73dc27b34b2798f6659968466b74d5567e2",
-    "VERIFICATION.txt": "a48e35b2263ac48ac18ebb171146046a0f52c4389c872e6b4c835c6cd9d0a4a7",
-    "SHA256SUMS.txt": "84033aa88efd8b9f79fd4c7562f20b852968aa8f3da30b9dbb33c67581d1ae59"
+    "VERIFICATION.txt": "a59fd267e300ac1740de3885b1acf7b45fe27a8688fe1deaecb919a895416a06",
+    "SHA256SUMS.txt": "227cb2425864b91d610509be2971cf47c83267459debfe57ebb286777976ca33"
   },
   "archives": {
     "log23-measure-v1-manuscript-source.zip": {
@@ -21,5 +22,9 @@
       "directory": "sources/lean",
       "members": 928
     }
+  },
+  "journal_pdf": {
+    "path": "journal/log23-measure-tlms.pdf",
+    "sha256": "a9faf337c5502db1cdeed60c4593168a213d254988cb0a5dfd6c07f868497f65"
   }
 }

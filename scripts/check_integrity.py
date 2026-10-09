@@ -60,6 +60,8 @@ def main():
         require(len(sources) == info['members'], f'Archive member count changed: {name}')
         total += len(sources)
     require((ROOT / 'LICENSES/Apache-2.0.txt').read_bytes() == (ROOT / 'sources/lean/LICENSE').read_bytes(), 'Apache license mismatch')
+    journal = manifest['journal_pdf']
+    require(digest((ROOT / journal['path']).read_bytes()) == journal['sha256'], 'Journal PDF mismatch')
     print(f'PASS: {len(files)} release files; {total} source members; complete hashes and exact source identity.')
     print('This is an integrity check, not a Lean build or theorem verification.')
 
