@@ -1,0 +1,144 @@
+\section{A joint Taylor-packing bound}\label{sec:direct-packing}
+
+We first record an elementary estimate that accounts simultaneously
+for auxiliary indices and analytic Taylor indices.
+
+\begin{lemma}[Packing with an extra coordinate]\label{lem:direct-packing}
+Let \(c(x)=\sum_{i=1}^r c_i x_i\) on \(\N^r\), where every
+\(c_i>0\), and let \(S\subset\N^r\) have finite cardinality \(M\).
+For \(L\geq0\), put
+\[
+ N_c(L)=\#\{(n,x)\in\N\times\N^r:n+c(x)\leq L\}.
+\]
+Then
+\[
+                     \sum_{x\in S}c(x)\geq LM-N_c(L).
+\]
+\end{lemma}
+\begin{proof}
+Discard the negative summands in \(\sum_{x\in S}(L-c(x))\).
+For each remaining \(x\), the integers \(0\leq n\leq L-c(x)\)
+give \(\lfloor L-c(x)\rfloor+1\geq L-c(x)\) augmented points.
+These sets are disjoint for distinct \(x\), and their union is
+contained in the set counted by \(N_c(L)\).
+\end{proof}
+
+\subsection{Uniform Taylor estimates}
+
+On the complex polydisc \(|z|,|z'|\leq R_0=100K\), every
+common entire function \(f_{a,P}\) associated to a monomial column
+has modulus at most
+\[
+ \mathcal B_H=
+  \exp\left(H\left[\frac{100K}{w_0}
+                           +\frac{\log(600K)}{w_*}\right]\right).
+\]
+Indeed, \(1<\theta<2\), \(h+k\leq H/w_0\),
+\(|\alpha|\leq H/w_*\), and
+\(\binom{\alpha}{a}\leq2^{|\alpha|}\).
+Cauchy's estimate gives the same bound for its coefficient vectors
+in the normalized Taylor monomials
+\((z/R_0)^d(z'/R_0)^e\).
+
+On the local contours \(|t|=|s|=1/2\), the translated variables
+satisfy \(|z|,|z'|\leq R_0/2\). A coefficient test
+\([t^{\ell'_1}s^{\ell'_2}]\) of a normalized Taylor monomial is
+therefore bounded by
+\[
+                         2^{\ell'_1+\ell'_2}2^{-d-e}.
+\]
+Expand a determinant of common coefficient tests row by row in
+these absolutely convergent Taylor series. If two rows use the
+same combined index \((a,d,e)\), their coefficient vectors are
+proportional, and the corresponding determinant term vanishes.
+Thus every nonzero term has distinct combined indices.
+
+\subsection{The analytic upper bound}
+
+Assign to a combined index the cost
+\[
+                         c(a,d,e)=\nu wa+\frac{d+e}{4},
+\]
+and define
+\[
+ N(L)=\#\left\{(n,d,e,a)\in\N^{m+3}:
+                  n+\frac{d+e}{4}+\nu wa\leq L\right\}.
+\]
+For any fixed \(\lambda>0\), Lemma~\ref{lem:direct-packing}
+gives, in every nonzero Taylor term,
+\begin{equation}\label{eq:packing}
+ \nu\sum_{\rm rows}wa+\frac14\sum_{\rm rows}(d+e)
+                               \geq\lambda HM-N(\lambda H).
+\end{equation}
+Since \(\log2\geq1/2\),
+\[
+                  2^{-d-e}\leq e^{-(d+e)/4}e^{-(d+e)/4}.
+\]
+Combine the first exponential with the approximation cost in
+\eqref{eq:packing}. The second exponential can be summed over all
+Taylor pairs, at a cost
+\((1-e^{-1/4})^{-2M}\) for the \(M\) rows.
+The coefficient determinant is bounded by \(M!\mathcal B_H^M\).
+The local test orders contribute at most \(2^{MH/v_0}\), and
+Lemma~\ref{lem:translation} gives a combined row-choice and
+scalar overhead of \(Q_H^M\).
+It follows that the original nonzero determinant satisfies
+\begin{equation}\label{eq:direct-analytic}
+ \frac{\log|\Delta_H|}{MH}
+ \leq\nu\bar b_H-\lambda+\frac{N(\lambda H)}{MH}
+                  +E_{\rm tr}+E_{\rm hol}+\rho_H,
+\end{equation}
+where
+\begin{align}
+ E_{\rm hol}
+   &=\frac{100K}{w_0}+\frac{\log2}{v_0}
+                              +\frac{\log(600K)}{w_*},
+       \label{eq:hol-error}\\
+ \rho_H
+   &=\frac{\log M+\log Q_H-2\log(1-e^{-1/4})}{H}
+                               \longrightarrow0.
+       \label{eq:overhead}
+\end{align}
+Here \(M!\leq M^M\), while \(\log M\) and \(\log Q_H\) are
+\(O(\log H)\). The same geometric majorant justifies the infinite
+Taylor expansions and their determinant sums. Every estimate is
+uniform in the selected monomial columns and translated row choices.
+
+\subsection{Comparison with the arithmetic bound}
+
+The weighted-simplex count in dimension \(m+3\) yields
+\[
+ N(\lambda H)\sim
+ \frac{16\lambda^{m+3}H^{m+3}}
+              {(m+3)!\nu^m\prod_iw_i}.
+\]
+Together with \eqref{eq:counts}, this gives
+\begin{equation}\label{eq:packing-limit}
+ \frac{N(\lambda H)}{MH}\longrightarrow
+       \frac{16v_0^2\lambda^{m+3}}{(m+3)K(\nu v)^m}.
+\end{equation}
+Write
+\[
+                            E=E_{\rm ar}+E_{\rm tr}+E_{\rm hol}.
+\]
+Comparing \eqref{eq:arith} and \eqref{eq:direct-analytic},
+using \(\nu>1\) and the uniform bound \(\bar b_H\leq v\),
+and then letting \(H\) tend to infinity through its allowed
+multiples, gives the necessary inequality
+\begin{equation}\label{eq:necessary}
+ \lambda-1-(\nu-1)v
+ \leq \frac{16v_0^2\lambda^{m+3}}{(m+3)K(\nu v)^m}+E.
+\end{equation}
+No limiting mean row weight or average selected column weight is
+required.
+
+Define \(\lambda_*>0\) by
+\begin{equation}\label{eq:lambda}
+                   \lambda_*^{m+2}=\frac{K(\nu v)^m}{16v_0^2}.
+\end{equation}
+At this value the fraction in \eqref{eq:necessary} equals
+\(\lambda_* /(m+3)\). Thus
+\begin{equation}\label{eq:contradiction}
+ g_m:=\frac{m+2}{m+3}\lambda_*-1-(\nu-1)v\leq E.
+\end{equation}
+We will choose the data so that the strict reverse inequality holds.

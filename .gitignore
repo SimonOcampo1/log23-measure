@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+.lake/
+*.olean
+*.ilean
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+sources/manuscript/*.pdf

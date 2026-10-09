@@ -1,0 +1,25 @@
+{
+  "paper": "log23-measure",
+  "version": "v1",
+  "title": "An upper bound of three for the irrationality exponent of log 3 / log 2",
+  "doi": "10.5281/zenodo.23256301",
+  "files": {
+    "log23-measure-v1.pdf": "a0ffd3adf5b9ce1109d491404c17bb2427d338b3bb62fdc89b7da5aac7e583fe",
+    "log23-measure-v1-manuscript-source.zip": "37cab1b34a25e203d84cfbec201e34a06323b52261612b09d13f0f889f6376de",
+    "log23-measure-v1-lean-source.zip": "a90bab903bc2f2b052cc1879437d7e46e902ec0c2d49e2257230b2f8fd5c82f1",
+    "README.txt": "9e49345fff9f3f57902b2e790244c9839c533a5a5c4166d1ee8eb7ef353049b5",
+    "RIGHTS.txt": "22badfc45d703534049bc3cafe47e73dc27b34b2798f6659968466b74d5567e2",
+    "VERIFICATION.txt": "a48e35b2263ac48ac18ebb171146046a0f52c4389c872e6b4c835c6cd9d0a4a7",
+    "SHA256SUMS.txt": "84033aa88efd8b9f79fd4c7562f20b852968aa8f3da30b9dbb33c67581d1ae59"
+  },
+  "archives": {
+    "log23-measure-v1-manuscript-source.zip": {
+      "directory": "sources/manuscript",
+      "members": 17
+    },
+    "log23-measure-v1-lean-source.zip": {
+      "directory": "sources/lean",
+      "members": 928
+    }
+  }
+}

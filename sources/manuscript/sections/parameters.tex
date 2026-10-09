@@ -1,0 +1,102 @@
+\section{Explicit choices for every exponent above three}\label{sec:parameters}
+
+Fix a rational \(\nu>3\). Define rational numbers
+\begin{align*}
+ e&=\frac{\nu-3}{2(2\nu-3)},& s&=1-e,& v&=s^3,\\
+ D&=\nu s^2-1-(\nu-1)s^3,&
+ B&=s-\frac{D}{4\nu s},&
+ C&=\frac12\left(\frac{B^2}{v}+\frac1B\right).
+\end{align*}
+Here \(0<s<1\), and
+\begin{align*}
+ D&=(1-s)((\nu-1)s^2-s-1)>0,\\
+ (\nu-1)s^2-s-1&=\frac{\nu-3}{2}+(\nu-1)e^2>0.
+\end{align*}
+Moreover \(0<D<\nu s^2\), so \(0<B<s\), and
+\begin{equation}\label{eq:G}
+ G:=\nu B^2-1-(\nu-1)v
+                   =\frac D2+\frac{D^2}{16\nu s^2}>0.
+\end{equation}
+It follows that
+\begin{equation}\label{eq:BC}
+ B^2>v,\quad B^3<v,\quad 1<B^2/v<C<1/B,
+ \quad B^2<Cv<1,\quad CB<1.
+\end{equation}
+
+Choose a rational \(F>2/v\) large enough that \(\nu/F<G/8\).
+For even integers \(m\) tending to infinity, set
+\begin{equation}\label{eq:scaling}
+ J=\lfloor C^{m/2}\rfloor,\quad K=J^2,\quad
+ w_0=B^{-m},\quad v_0=2Jv^{m/2}B^{-m},\quad
+ \sigma=\frac1{100(m+2)}.
+\end{equation}
+All these weights are rational and \(J\geq1\). Exactly,
+\(K(w_0/v_0)^2v^m=1/4\). In fact the inflated volume is less than
+\(25/97<1\), since
+\((1+3/[100(m+2)])^{m+2}<1/(1-3/100)\).
+Conditions \eqref{eq:shrink} and \eqref{eq:basegap} hold eventually:
+by \eqref{eq:BC},
+\begin{align*}
+ K/w_0&\sim(CB)^m\longrightarrow0,\\
+ v_0&\sim2(\sqrt{Cv}/B)^m\longrightarrow\infty,\\
+ m/v_0&\longrightarrow0,\\
+ w_0/v_0&\sim\tfrac12(Cv)^{-m/2}\longrightarrow\infty
+             \quad\hbox{exponentially}.
+\end{align*}
+The last quantity eventually exceeds the quadratic expression
+\(2(m+3)/\sigma\).
+
+The value in \eqref{eq:lambda} simplifies exactly to
+\[
+ \lambda_*^{m+2}=\frac{(\nu B^2)^m}{64},
+ \qquad \lambda_*\longrightarrow\nu B^2.
+\]
+Thus \(g_m\to G>0\). Choose and fix an even \(m\) large enough
+for the geometric conditions and
+\begin{equation}\label{eq:mchoice}
+ g_m>G/2,\qquad
+ E_0:=\frac{\Lambda Fm+2\log2}{v_0}+\frac{100K}{w_0}<G/8.
+\end{equation}
+
+Only now choose \(m\) fractions from the hypothetical unbounded
+sequence \eqref{eq:exceptional}. Successively large denominators ensure
+\(1<r_i<2\), \eqref{eq:qcondition}, all separation inequalities,
+and
+\begin{equation}\label{eq:wchoice}
+ E_w:=\Lambda\sum_i\frac1{w_i}
+        +\frac{v+\nu+\log12+\log(600K)}{w_*}<G/8.
+\end{equation}
+For the last condition it suffices first to require every \(w_i\)
+to exceed one fixed large constant, and then enforce successive
+separation. Unbounded denominators give unbounded
+\(\lceil\log q\rceil\), even along the exceptional sequence.
+No next fraction is needed when choosing a previous threshold.
+
+Now all data are fixed. We have
+\[
+            E=\nu/F+E_0+E_w<3G/8<g_m.
+\]
+The interpolation proposition supplies the nonzero minors for all large
+divisible \(H\). Taking \(H\) to infinity in their lower and upper
+bounds gives \eqref{eq:contradiction}, contrary to \(g_m>E\). This excludes \eqref{eq:exceptional} for
+each rational \(\nu>3\).
+
+Given \(\varepsilon>0\), choose rational \(3<\nu<3+\varepsilon\).
+The set \(\mathcal E\) of reduced fractions satisfying
+\eqref{eq:exceptional} is finite: its denominators are bounded,
+and the same inequality bounds its numerators.
+For \(p/q\notin\mathcal E\), reduce the fraction to \(p'/q'\).
+Then \(q'\leq q\), and
+\[
+ |\theta-p/q|=|\theta-p'/q'|>(q')^{-\nu}
+                                  \geq q^{-\nu}\geq q^{-3-\varepsilon}.
+\]
+If \(\mathcal E\) is nonempty, then for its finitely many rational numbers,
+irrationality of \(\theta\) gives a strictly positive minimum
+distance from \(\theta\). Since \(q^{-3-\varepsilon}\) tends to
+zero, increasing the cutoff covers every representation of these
+fractions as well. If it is empty, no additional cutoff is needed.
+This proves \eqref{eq:main} without a
+coprimality restriction. Together with Dirichlet's theorem it
+proves Theorem~\ref{thm:main}.
+\hfill\(\square\)

@@ -1,0 +1,87 @@
+\section{Introduction}
+
+Throughout, \(\N=\{0,1,2,\ldots\}\), \(\log\) denotes the natural
+logarithm, and
+\[
+                         \theta=\frac{\log 3}{\log 2}.
+\]
+For an irrational real number \(\xi\), its irrationality exponent
+\(\mu(\xi)\) is the supremum of the real numbers \(\nu\) for which
+\[
+                 0<\left|\xi-\frac pq\right|<q^{-\nu}
+\]
+has infinitely many reduced solutions \(p/q\) with \(q>0\).
+Unique factorization shows that \(\theta\) is irrational: a rational
+identity \(\theta=p/q\), with \(p,q>0\), would imply \(3^q=2^p\).
+Dirichlet's approximation theorem therefore gives \(\mu(\theta)\geq2\).
+We prove the following upper bound.
+
+\begin{theorem}\label{thm:main}
+For every \(\varepsilon>0\), there exists an integer
+\(Q_\varepsilon\geq2\) such that, for every \(p\in\Z\) and every
+integer \(q\geq Q_\varepsilon\),
+\begin{equation}\label{eq:main}
+ \left|\frac{\log 3}{\log 2}-\frac pq\right|
+                       \geq q^{-3-\varepsilon}.
+\end{equation}
+Consequently,
+\[
+                         2\leq\mu(\theta)\leq3.
+\]
+\end{theorem}
+
+Rational approximation to \(\theta\) is equivalently a homogeneous
+linear-form problem:
+\[
+ \left|\theta-\frac pq\right|
+       =\frac{|q\log 3-p\log 2|}{q\log 2}.
+\]
+For comparison, the linear-form estimate of Wu and Wang
+\cite{WuWang2014} implies \(\mu(\theta)\leq5.1163051\).
+The author's earlier preprint \cite{JhaEarlier} gives the bound
+\(5.104104\), by a different construction with symmetrized
+polynomials and exact finite certificates. Theorem~\ref{thm:main}
+improves this numerical upper bound to three.
+
+The geometric and analytic framework is inspired by OpenAI's proof
+of the exponent-two theorem for \(\pi\) \cite{OAIpi}, in particular
+its use of separated weights, interpolation, and determinants of
+common Taylor coefficients. Liu, Jiang, and Zhang \cite{LJZ2026}
+establish exponent two for every nonzero logarithm of a positive
+rational number. The author's rational-logarithm and
+compatible-embedding results are treated separately in
+\cite{JhaLogarithms}. A bound for each individual logarithm does not
+by itself give the corresponding bound for their quotient.
+Here both base variables are retained, and primitive rational
+characters provide the curve rigidity needed for two-base interpolation.
+The final determinant estimate counts auxiliary and Taylor indices
+together.
+
+\subsection{Outline and order of choices}
+
+It suffices to exclude reduced approximations
+\begin{equation}\label{eq:exceptional}
+                         |\theta-p/q|\leq q^{-\nu}
+\end{equation}
+with unbounded denominators for every rational \(\nu>3\).
+Assuming such approximations exist, we first fix rational seed
+parameters, then a finite auxiliary dimension and base weights.
+Only after these choices do we select finitely many exceptional
+fractions with sufficiently separated denominators.
+All these data remain fixed while the interpolation degree \(H\)
+tends to infinity.
+
+Sections~\ref{sec:local}--\ref{sec:geometry} establish the
+interpolation theorem from a local multiplicity comparison and a
+global curve inequality. Section~\ref{sec:arithmetic} extracts a
+nonzero rational determinant and gives its arithmetic lower bound.
+Sections~\ref{sec:analysis}--\ref{sec:direct-packing} obtain an
+incompatible upper bound by translating the rows to common analytic
+functions and counting distinct Taylor indices.
+Section~\ref{sec:parameters} chooses the parameters and completes
+the proof. Section~\ref{sec:verification} describes the formal
+verification and its reproducible source package.
+
+The conclusion is an upper bound, not an equality with three.
+The argument does not provide an effective numerical value of
+\(Q_\varepsilon\).

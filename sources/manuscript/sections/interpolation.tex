@@ -1,0 +1,297 @@
+\section{A local comparison}\label{sec:local}
+
+The varieties in this section and the next are over \(\C\).
+We use the local multiplicity comparison underlying the
+separated-weight method of \cite{OAIpi}; see also
+\cite[Lemma 3]{LJZ2026}. Its proof is included to specify the
+two normal-basis choices needed in the present application.
+
+A normal basis to a smooth subvariety means a collection of ambient
+vectors whose images form a basis modulo its tangent space. For an
+irreducible subvariety, all statements about these bases are at a
+general smooth point.
+
+\begin{lemma}\label{lem:local}
+Let affine coordinates have positive rational degree weights
+\(W_a\). Let commuting analytic vector fields \(D_b\) form a frame
+on an open set and have positive costs \(V_b\). Suppose polynomials
+\(f_\ell\) have weighted degree at most \(N>0\), and \(S\) is a
+codimension-\(k\) irreducible component, with \(k\geq1\), of their common zero set in
+that open set. If all further frame derivatives of every \(f_\ell\)
+of cost less than \(\epsilon N\) vanish on \(S\), then for a
+coordinate normal basis \(A\) and a frame normal basis \(B\),
+\begin{equation}\label{eq:comparison}
+ \prod_{a\in A}W_a
+ \leq k!\epsilon^{-k}\prod_{b\in B}V_b
+ \leq k^k\epsilon^{-k}\prod_{b\in B}V_b.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose a smooth point of \(S\) with both basis properties and away
+from every other component. The commuting flows indexed by \(B\),
+started on \(S\), give analytic coordinates \((z,b)\). Here \(z\)
+is on \(S\) and \(b\) is transverse. The derivative hypothesis says
+that each equation has an expansion
+\[
+ f_\ell(z,b)=\sum_{\sum_{j\in B}V_j\alpha_j\geq\epsilon N}
+                         f_{\ell,\alpha}(z)b^\alpha.
+\]
+On the affine coordinate slice obtained by fixing coordinates outside
+\(A\), the map to \(b\) is locally invertible. Substitution of its
+analytic functions \(z=z(b)\) cannot decrease the weight of a surviving
+monomial. Consequently, the quotient by the restricted equations has
+length at least the number of nonnegative integer \(\alpha\) with
+\(\sum_{j\in B}V_j\alpha_j<\epsilon N\). The unit cubes with those
+lower corners cover the corresponding open real simplex, so this number
+is at least
+\[
+                 \frac{(\epsilon N)^k}{k!\prod_{j\in B}V_j}.
+\]
+
+The common zero on the coordinate slice is isolated. Generic \(k\)
+constant linear combinations of the restricted equations still have
+an isolated common zero there; their quotient length bounds the previous
+length from above. Weighted B\'ezout gives the upper bound
+\(N^k/\prod_{a\in A}W_a\). One can obtain precisely this bound from
+ordinary isolated-zero B\'ezout: choose an integer \(M_0\) with
+\(M_0W_a\) positive integers, and substitute
+\(x_a=\lambda_a+z_a^{M_0W_a}\), choosing \(\lambda_a\) away from the
+coordinates of the point. The \(\prod M_0W_a\) preimages are unramified,
+preserve local length, and the transformed equations have total degree
+at most \(M_0N\). Comparison of the two length bounds proves the claim.
+\end{proof}
+
+\section{Two-base interpolation}\label{sec:geometry}
+
+Fix \(m,K\geq1\), positive rational \(w_0,v_0,v,\sigma\) with
+\(v<1\), and positive rational \(w_1,\ldots,w_m\). Index the two
+base coordinates first and the auxiliary coordinates in increasing order.
+Set
+\[
+ W=(w_0,w_0,w_1,\ldots,w_m),\qquad
+ V=(v_0,v_0,w_1/v,\ldots,w_m/v),\qquad d=m+2.
+\]
+For an auxiliary multi-index \(\alpha\), write
+\(w\alpha=\sum_i w_i\alpha_i\). Let \(\PW(H)\) be spanned by
+\(Y^hZ^kX^\alpha\) with \(w_0(h+k)+w\alpha\leq H\).
+Let \(\JV(H)\) retain the formal coefficients
+\(t^{\ell_1}s^{\ell_2}u^\beta\) for which
+\(v_0(\ell_1+\ell_2)+w\beta/v<H\).
+
+Put \(\epsilon=\sigma/(m+3)\). Impose the separation inequalities
+\begin{equation}\label{eq:separation}
+ \prod_{a\in A}W_a>
+       k^k\epsilon^{-k}\prod_{b\in B}V_b
+\end{equation}
+for every two index sets of the same cardinality
+\(1\leq k\leq m+1\) whose largest differing auxiliary index lies
+in \(A\). There are successive lower thresholds on the \(w_i\)
+ensuring all these inequalities. Indeed, at the largest differing
+auxiliary index the ratio contains the new weight linearly. Higher
+common indices cancel except for fixed factors \(W_j/V_j=v\);
+the other weights are already fixed. These thresholds do not involve
+any rational slope.
+
+For an explicit simultaneous choice put
+\[
+ L=\min(w_0,1),\quad R_0=\max(v_0,1/v),\quad
+ D=1+\sum_{k=0}^{d}k^k\epsilon^{-k}(R_0/L)^k,
+\]
+using \(0^0=1\). Write \(x_0=x_1=1\) and \(x_{i+1}=w_i\)
+for \(1\le i\le m\). It suffices that all \(x_i\ge1\) and
+\(x_i>D\prod_{j<i}x_j\) for every auxiliary index \(i\ge2\).
+Indeed \(W_j\ge Lx_j\) and \(V_j\le R_0x_j\). Cancel common
+indices from the two products. At the largest differing index, the
+growth condition exceeds the product of all earlier indices by the
+factor \(D\); the remaining factors on its side are at least one.
+The definition of \(D\) then gives \eqref{eq:separation} for every
+cardinality simultaneously.
+
+\begin{proposition}\label{prop:interpolation}
+Suppose \eqref{eq:separation} and
+\begin{align}
+ (1+3\sigma)^d K(w_0/v_0)^2v^m&<1,\label{eq:volume}\\
+ (1+\sigma)v&<1,\label{eq:shrink}\\
+ w_0/v_0&>2(m+3)/\sigma.\label{eq:basegap}
+\end{align}
+Let \(r_i=p_i/q_i\) be reduced positive fractions with
+\begin{equation}\label{eq:qcondition}
+                         q_i v_0/w_0>1+\sigma.
+\end{equation}
+At the centers \((2^j,3^j,0,\ldots,0)\), \(0\leq j<K\), use
+the substitutions
+\begin{equation}\label{eq:jets}
+ Y=2^j(1+t),\quad Z=3^j(1+s),\quad
+ X_i=\log(1+s)-r_i\log(1+t)+u_i.
+\end{equation}
+Then \(\PW(H)\longrightarrow\bigoplus_{j<K}\JV(H)\) is
+surjective for every sufficiently large \(H\) divisible by a fixed
+positive integer. Its degree threshold may depend on all the fixed data.
+\end{proposition}
+
+\subsection{A curve inequality}
+
+On the complete smooth model of an irreducible affine curve define
+\[
+ D_W(C)=\sum_P\max\left(0,-\frac{\ord_PY}{w_0},
+        -\frac{\ord_PZ}{w_0},
+        -\frac{\ord_PX_1}{w_1},\ldots,-\frac{\ord_PX_m}{w_m}\right).
+\]
+An identically zero coordinate contributes no pole. At a branch through
+center \(j\), put \(t=Y/2^j-1\), \(s=Z/3^j-1\), and
+\(u_i=X_i-\log(1+s)+r_i\log(1+t)\), and set
+\[
+ h_P=\min\left(\frac{\ord_Pt}{v_0},\frac{\ord_Ps}{v_0},
+                         \frac{\ord_Pu_i}{w_i/v}:1\leq i\leq m\right).
+\]
+Orders of identically zero series are infinity. The formal coordinate
+change is invertible, so \(h_P\) is positive and finite.
+We prove
+\begin{equation}\label{eq:curve}
+                D_W(C)\geq(1+\sigma)\sum_{P\text{ centered}}h_P.
+\end{equation}
+
+Suppose it fails. In particular the curve meets a center and neither
+\(Y\) nor \(Z\) vanishes identically. The leading dimensions of
+polynomials of degree at most \(N\) and of the conditions requiring
+vanishing below \((1+3\sigma)N\) are respectively
+\[
+ \frac{N^d}{d!\prod_a W_a},\qquad
+ \frac{K(1+3\sigma)^dN^d}{d!\prod_a V_a}.
+\]
+Thus \eqref{eq:volume} supplies a nonzero such polynomial \(F_N\)
+for all sufficiently large \(N\). No independence of the conditions
+is used here.
+
+On \(YZ\ne0\) take the commuting frame
+\[
+ D_Y=Y\partial_Y-\sum_i r_i\partial_{X_i},\quad
+ D_Z=Z\partial_Z+\sum_i\partial_{X_i},\quad D_i=\partial_{X_i}.
+\]
+It preserves the degree bound and becomes
+\((1+t)\partial_t,(1+s)\partial_s,\partial_{u_i}\) in the jets.
+A frame word of cost at most \(\sigma N\) applied to \(F_N\)
+has branch order at least \((1+2\sigma)Nh_P\). Its total poles on
+the curve are at most \(ND_W(C)\). Failure of \eqref{eq:curve}
+would make the total zeros larger, unless that derivative vanished
+identically on the curve. Therefore every such word does vanish.
+
+Consider the zero sets of frame derivatives of costs at most
+\(r\epsilon N\), \(0\leq r\leq m+3\). Starting from the last,
+choose nested irreducible components containing the curve. Their
+dimensions lie between one and \(m+1\), so two adjacent ones coincide.
+Call the persistent component \(S\). Further derivatives of the earlier
+equations of cost less than \(\epsilon N\) vanish on \(S\).
+Lemma~\ref{lem:local} applies to every pair of its normal bases.
+
+If all auxiliary coordinate directions are tangent to \(S\), its normal
+space has dimension \(k=1\) or \(2\). Coordinate and frame normal bases
+then use only base indices. The comparison gives
+\(w_0/v_0\leq k/\epsilon\leq2/\epsilon\), contrary to
+\eqref{eq:basegap}.
+
+Otherwise choose the largest nontangent auxiliary direction \(i\).
+Some coordinate normal basis contains it. Higher auxiliary directions
+are zero in the normal quotient for both frames. Hence
+\eqref{eq:separation} forces every frame normal basis to contain \(i\).
+The other frame vectors span the hyperplane
+\(\ker(dX_i+r_i\,dY/Y-dZ/Z)\); their images fail to span the normal
+quotient. The tangent space of \(S\) is therefore in this hyperplane.
+On its function field we have
+\begin{equation}\label{eq:rigidity}
+             d(q_iX_i)=d\log(Z^{q_i}/Y^{p_i}).
+\end{equation}
+Both rational functions in this identity are constant. To see this,
+if the character were nonconstant, choose a smooth point where it and
+\(X_i\) are regular and its differential is nonzero. Intersect \(S\)
+with affine hyperplanes through that point whose common tangent line
+is not in the kernel of this differential. The curve component through
+the point is smooth there, and the character remains nonconstant on it.
+Restrict \eqref{eq:rigidity} to this curve and take a complete smooth model.
+At one of its zeros or poles its logarithmic differential has nonzero
+residue, whereas an exact differential has residue zero. Once the
+character is constant, characteristic zero makes \(X_i\) constant too.
+Clearing denominators transfers these polynomial relations to the
+original curve. The center character values
+\((3^{q_i}/2^{p_i})^j\) are pairwise different, by unique factorization.
+The curve therefore meets at most one center.
+
+If \(Y\) is nonconstant on that curve, choose integers \(a,b\) with
+\(a q_i+b p_i=1\). Writing \(c=Z^{q_i}/Y^{p_i}\ne0\) and
+\(T=Y^aZ^b\), we have \(Y=c^{-b}T^{q_i}\). At every branch through
+the possible center, \(T\) has the same nonzero residue \(T_j\).
+The difference-of-powers factor has nonzero residue
+\(q_iT_j^{q_i-1}\), whence
+\[
+ \ord_P(T-T_j)=\ord_P(Y-2^j)\geq v_0h_P.
+\]
+The pole degree of \(Y\) is \(q_i\deg(T)\). Zero--pole equality now
+implies
+\[
+ D_W(C)\geq\frac{q_i}{w_0}\deg(T)
+       \geq\frac{q_i v_0}{w_0}\sum_Ph_P
+       >(1+\sigma)\sum_Ph_P,
+\]
+a contradiction. If \(Y\) is constant, \(Z^{q_i}=cY^{p_i}\) makes
+\(Z\) constant. Some \(X_l\) is nonconstant, and the two logarithmic
+corrections vanish along the curve. Therefore
+\[
+ (w_l/v)\sum_Ph_P\leq\deg(X_l)\leq w_lD_W(C),
+\]
+contradicting \eqref{eq:shrink}. Curves missing all centers have contact
+sum zero. This proves \eqref{eq:curve} in every case.
+
+\subsection{Obtaining bounded-degree polynomials}
+
+Choose an integer \(R\) such that all \(R/W_a,R/V_a\) are positive
+integers and \(R\geq\max_a W_a\). Embed the affine space by its monomials of weighted degree at
+most \(R\), and let \(X\) be the projective closure with
+\(L=\OO_X(1)\). The constant-coordinate chart is the original affine
+space. Pure powers and the constant monomial show on any normalized
+curve meeting this chart that
+\begin{equation}\label{eq:degree}
+                          \deg L=R D_W(C).
+\end{equation}
+
+Truncate both logarithms in auxiliary coordinate \(i\) with first
+omitted degree \(T_i\) such that \(T_iv_0>w_i/v\), obtaining regular
+coordinates \(t,s,u'_i\). Every omitted term has order greater than
+\((w_i/v)h_P\), so the minimum defining \(h_P\) is unchanged. The
+coordinate change and its inverse preserve the entire weighted filtration.
+At each center form
+\[
+ I_j=(t^{R/v_0},s^{R/v_0},(u'_1)^{Rv/w_1},\ldots,(u'_m)^{Rv/w_m}).
+\]
+Patch with the unit ideal elsewhere to get a coherent ideal \(I\).
+Its branch order is \(Rh_P\).
+
+Let \(p:X'\to X\) be the ordinary blow-up of \(I\), and write
+\(I\OO_{X'}=\OO_{X'}(-E)\), \(A=p^*L\). On a noncontracted curve
+whose image meets the chart, \eqref{eq:curve} and \eqref{eq:degree}
+give nonnegative degree for \(A-(1+\sigma)E\). Curves outside the
+chart miss \(E\), and on contracted curves \(-E\) has positive degree
+by relative ampleness. Thus \(A-(1+\sigma)E\) is nef.
+For some integer \(a>1\), \(aA-E\) is ample, and
+\[
+ A-E=\frac{a-1}{a(1+\sigma)-1}\bigl(A-(1+\sigma)E\bigr)
+       +\frac{\sigma}{a(1+\sigma)-1}(aA-E)
+\]
+is ample as well. These facts apply to the projective schemes in question;
+smoothness of \(X'\) is not needed; see \cite[Corollary 1.4.10]{Lazarsfeld}
+and \cite{StacksBlowup}.
+
+For large \(n\), the graded-piece comparison and relative vanishing
+for the Rees algebra yield
+\(p_*\OO_{X'}(-nE)=I^n\) and
+\(R^qp_*\OO_{X'}(-nE)=0\) for \(q>0\)
+\cite{StacksGraded,StacksComparison}. Projection, Leray and Serre
+vanishing give \(H^1(X,I^n\otimes L^n)=0\). Sections of \(L^n\)
+therefore realize all local classes modulo \(I^n\).
+Each generator has formal weighted order at least \(R\), so \(I^n\)
+is contained in the ideal of weight at least \(nR\); the desired packet
+quotient is smaller. Completion does not change these finite-length
+quotients. Finally, Serre vanishing for the ideal sheaf of the projective
+embedding lifts every section of \(L^n\), for large \(n\), to a
+degree-\(n\) homogeneous polynomial in its monomial coordinates. On the
+affine chart this has weighted degree at most \(nR\).
+Taking \(H=nR\) proves Proposition~\ref{prop:interpolation}.

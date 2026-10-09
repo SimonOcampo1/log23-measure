@@ -1,0 +1,124 @@
+VERIFICATION RECORD — 9 OCTOBER 2026
+
+PAPER
+
+An upper bound of three for the irrationality exponent of log 3 / log 2
+Rohit Kumar Jha
+
+CHECKED MATHEMATICAL ENDPOINT
+
+  For every real epsilon > 0:
+    there exists a natural Q >= 2 such that
+    for every integer p and every natural q >= Q,
+
+        |log(3)/log(2) - p/q| >= 1 / q^(3 + epsilon).
+
+  Consequently:  2 <= mu(log(3)/log(2)) <= 3.
+
+The endpoint has no assumed approximation sequence, interpolation theorem,
+matrix-rank condition, nonzero determinant, or geometric input.
+The exceptional fractions and all necessary parameter data are constructed
+inside its dependency closure.
+
+COMPLETED FORMAL CHECKS
+
+1. Ordinary build of the verified original development:
+
+   lake build -q LogarithmExtension.LogRatioMain \
+     LogarithmExtension.LogRatioAverageAudit
+
+   Result: exit code 0.
+
+2. Dependency-closure replay:
+
+   lake env lean --run VerifyLogRatioComponents.lean
+
+   Result: exit code 0.
+   Selected roots: 127.
+   Replayed declarations: 116,922.
+   Replay environment: initially empty Lean kernel environment.
+   Permitted axioms: propext, Classical.choice, Quot.sound.
+   Unsafe and partial dependencies: rejected by the verifier.
+
+   The completion output confirmed the geometric interpolation,
+   denominator clearing, analytic determinant estimate, parameter
+   construction, selection of exceptional approximations, and the
+   literal all-numerator/all-large-denominator endpoint.
+
+3. ASCII statement used in the manuscript:
+
+   lake env lean ../log23-measure/support/PaperStatement.lean
+
+   Result: exit code 0.
+   Reported axioms: propext, Classical.choice, Quot.sound.
+   This file proves exactly the displayed ASCII statement by the
+   fully verified final theorem, with no extra hypotheses.
+
+4. Publication package configuration:
+
+   From log23-measure/lean:
+   lake build -q LogarithmExtension.LogRatioMain \
+     LogarithmExtension.LogRatioAverageAudit
+   lake env lean PaperStatement.lean
+
+   Both commands returned exit code 0.
+   This check reused the pinned local dependency cache and a separate
+   copy of the already verified compilation cache. It tested the
+   publication-specific Lake configuration and copied sources; it was
+   not a fresh network download of every dependency.
+
+VERSIONS
+
+  Lean: leanprover/lean4:v4.34.1
+  Lean executable: 4.34.1, commit
+    5045d0056413266e57c625dcd7c365b10e377c52
+  Checked platform: arm64-apple-darwin24.6.0
+  mathlib: d13f23b723b8a846827a245b89c10fc7d3f11612
+  OpenAI math: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+
+SOURCE INTEGRITY
+
+  LogarithmExtension/LogRatioMain.lean
+    SHA-256 14c235a10c36e3096a131a3ddaf5f1ae4c29a4567f96aef7e8bd8e29ab7e73af
+  VerifyLogRatioComponents.lean
+    SHA-256 a7916316dc38de29fb9963f9a8cce188d4f486b9c80ed77fa47270efa70d2aec
+  PaperStatement.lean
+    SHA-256 b4a66aa2d1d1fb5a54be7720dc91e223cb0c7f905b3928ea499653eb08f3ab31
+
+The package contains the 916-module local import closure needed by the
+selected roots, with all non-library imports resolved. Every copied
+proof file matches the checked original byte-for-byte.
+Every bundled OpenAI module matches its blob at the pinned upstream
+revision, not merely the current working-tree name.
+SOURCE-INVENTORY.json and SHA256SUMS.txt provide the complete inventory.
+
+MANUSCRIPT CHECKS
+
+  Zenodo version: 13 pages, A4.
+  TLMS version: 11 pages, A4.
+  Both use equal 28 mm left and right margins.
+  Both read one shared mathematical body, abstract, and declaration.
+  Both compile with latexmk and pdflatex, exit code 0.
+  No unresolved references/citations or overfull boxes in the final logs.
+  Title, author, formulas, main theorem, proof conclusion, declaration,
+  and reference layout have been inspected.
+  The old alternative analytic route is not presented as the verified
+  proof: the manuscript follows the direct Taylor-packing route.
+
+PACKAGING
+
+The packaging script recomputes file hashes, verifies all archive entries
+byte-for-byte and checks ZIP CRCs. It excludes .lake caches, .git
+directories, credentials, and unrelated working notes. Its terminal
+output and the separate package-check record identify those checks.
+
+Both PDFs were also rebuilt successfully from a clean extraction of the
+manuscript-source archive. Their complete extracted PDF text matched
+the corresponding release PDFs. ZIP CRCs, embedded SHA-256 manifests,
+and the Zenodo-folder mirror were checked successfully.
+
+SCOPE
+
+This proves the stated upper bound; it does not prove equality with three.
+The paper does not claim an effective numerical denominator cutoff.
+No journal acceptance or endorsement is asserted.

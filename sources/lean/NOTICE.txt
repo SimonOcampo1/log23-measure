@@ -1,0 +1,33 @@
+LOG23-MEASURE: SOURCE ATTRIBUTION
+
+Original LogarithmExtension contributions and the accompanying
+publication-specific scripts:
+  Copyright 2026 Rohit Kumar Jha
+  Licensed under the Apache License, Version 2.0.
+
+The two-base development adapts the separated-weight interpolation and
+Taylor-determinant framework of OpenAI's "The irrationality exponent of
+pi is 2" and relies on substantial OpenAI formal infrastructure.
+The new ratio-specific modules retain their existing source comments.
+The dependency-closure verifier adapts the earlier VerifyGeneralLog
+verifier, as stated in its source.
+
+Bundled third-party formal library:
+  OpenAI math, revision adc7f1241b42e322a6451854ab7e4b4c146bf78a
+  https://github.com/openai/math
+  Retained licenses:
+    vendor/openai-math/LICENSE
+    vendor/openai-math/lean/LICENSE
+
+The vendored sources are copied byte-for-byte from the verified local
+snapshot. SOURCE-INVENTORY.json records their original paths and hashes.
+The publication package does not alter upstream proof modules.
+
+External dependency:
+  mathlib4 and its transitive dependencies, at the revisions recorded in
+  lake-manifest.json. They are not redistributed in this archive and
+  retain their respective licenses.
+
+The manuscript and manuscript sources are separately licensed under
+Creative Commons Attribution 4.0 International (CC BY 4.0).
+That license does not replace any software license.

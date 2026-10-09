@@ -1,0 +1,60 @@
+\section{A rational determinant and its lower bound}\label{sec:arithmetic}
+
+Fix a rational \(\nu>3\) and fractions satisfying \eqref{eq:exceptional}, chosen
+large enough that \(1<r_i<2\). Set \(w_i=\lceil\log q_i\rceil\)
+and \(w_* =\min_iw_i\geq1\). Choose a rational \(F>2/v\), and use
+\[
+ T_i=\lceil Fw_i/v_0\rceil,\quad
+ G_i(x)=\sum_{1\leq n<T_i}\frac{(-1)^{n+1}x^n}{n},\quad
+ L_i=\lcm(1,\ldots,T_i).
+\]
+The extra endpoint in \(L_i\) is harmless; only denominators below \(T_i\)
+occur in \(G_i\).
+Since \(T_iv_0>w_i/v\),
+substituting \(G_i\) for both logarithms preserves the interpolation
+rank. The matrix, with all coefficient rows and all allowed monomial
+columns, is rational and has full row rank for large divisible \(H\).
+Choose a nonzero square minor \(\Delta_H\) using every row, and let its
+size be \(M=M_H\).
+
+Multiply column \((h,k,\alpha)\) by \(\prod_iq_i^{\alpha_i}\),
+row \((j,\ell_1,\ell_2,\beta)\) by \(\prod_iq_i^{-\beta_i}\),
+and every entry by
+\(D_H=\prod_i L_i^{\lfloor H/w_i\rfloor}\).
+The resulting entries are integers: apart from integral factors they
+are coefficients of
+\[
+ 2^{jh}3^{jk}\binom\alpha\beta(1+t)^h(1+s)^k
+              \prod_i[q_iG_i(s)-p_iG_i(t)]^{\alpha_i-\beta_i}.
+\]
+Entries with some \(\beta_i>\alpha_i\) are zero. No approximation
+denominator is raised to a base derivative order.
+
+Let \(\Lambda=4+\log4\), and put
+\(\bar b_H=(MH)^{-1}\sum_{\rm rows}w\beta\leq v\).
+The elementary bound \(\log\lcm(1,\ldots,n)\leq\Lambda n\)
+suffices. For completeness, the ratio of the least common multiples
+through \(2^k\) and \(2^{k-1}\) divides
+\(\binom{2^k}{2^{k-1}}\): each prime power in \((2^{k-1},2^k]\)
+contributes its underlying prime to that ratio and to the binomial
+coefficient. Summing the logarithmic bound over dyadic intervals
+and enlarging to the next power of two
+gives the stronger constant \(4\log2\). The coarser constant
+\(\Lambda\) will suffice. Nonvanishing of the integral determinant gives
+\begin{equation}\label{eq:arith}
+ \frac{\log|\Delta_H|}{MH}\geq-1+\bar b_H-E_{\rm ar},\qquad
+ E_{\rm ar}=\frac{\Lambda Fm}{v_0}
+          +\Lambda\sum_i\frac1{w_i}+\frac v{w_*}.
+\end{equation}
+Indeed the column logarithmic charge is at most \(MH\), the replacement
+of \(\log q_i\) by \(w_i\) in the row credit loses at most
+\(vMH/w_*\), and \(\log D_H/H\) is bounded by the first two terms
+in \(E_{\rm ar}\). This does not assume anything about the average
+height of the selected columns.
+
+Weighted-simplex lattice counts give, with all data fixed,
+\begin{equation}\label{eq:counts}
+ M=\frac{Kv^mH^{m+2}}{(m+2)!v_0^2\prod_iw_i}+O(H^{m+1}).
+\end{equation}
+This follows by rescaling the row simplex to the unit simplex, whose
+volume is \(1/(m+2)!\).

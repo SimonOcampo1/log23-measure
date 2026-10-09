@@ -1,0 +1,65 @@
+\section{Formal verification}\label{sec:verification}
+
+The accompanying Lean development formalizes the direct
+Taylor-packing proof presented here, including the selection of
+exceptional approximations and the verification of every geometric
+and parameter condition. In the namespace
+\texttt{LogarithmExtension.LogRatio.Main}, the theorem
+\texttt{logRatio\_approximation\_bound} has the literal statement
+of Theorem~\ref{thm:main}:
+\begin{verbatim}
+theorem logRatio_approximation_bound
+    (epsilon : Real) (hepsilon : 0 < epsilon) :
+    Exists fun Q : Nat => And (2 <= Q)
+      (forall (p : Int) (q : Nat), Q <= q ->
+        (q : Real)^(-(3+epsilon)) <=
+          abs (Real.log 3 / Real.log 2 - (p : Real)/(q : Real)))
+\end{verbatim}
+The displayed statement uses ASCII spellings for the logical
+symbols; the accompanying source uses Lean's usual Unicode notation.
+The additional theorem
+\begin{center}
+\texttt{logRatio\_irrationalityExponent\_bounds}
+\end{center}
+states \(2\leq\mu(\theta)\leq3\).
+Neither endpoint has an interpolation, determinant,
+approximation, or geometric hypothesis.
+
+The formal modules follow the mathematical organization of the
+proof. The geometry culminates in
+\texttt{WeightedInterpolation.cofinal\_packetMap\_surjective};
+the arithmetic and analytic estimates meet in
+\texttt{DeterminantComparison}; and
+\texttt{ParameterContradiction} and \texttt{AdmissibleData}
+construct the fixed data and exclude an unbounded exceptional
+family. The final module handles real exponents and unreduced
+fractions. The package records the module-to-section correspondence.
+
+The development uses the following pinned versions:
+\begin{center}
+\small
+\begin{tabular}{ll}
+Lean & 4.34.1\\
+mathlib & \texttt{d13f23b723b8a846827a245b89c10fc7d3f11612}\\
+OpenAI library & \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}
+\end{tabular}
+\end{center}
+The OpenAI library supplies substantial underlying algebraic-geometric,
+analytic, and irrationality-exponent infrastructure; it is included
+with its original attribution and licenses.
+
+From the root of the accompanying Lean source package, run:
+\begin{verbatim}
+lake build -q LogarithmExtension.LogRatioMain \
+  LogarithmExtension.LogRatioAverageAudit
+lake env lean --run VerifyLogRatioComponents.lean
+\end{verbatim}
+The first command builds the upper-bound development and the
+auxiliary audit module. The second rechecks the complete dependency
+closure of 127 selected roots in an initially empty Lean kernel
+environment. In the verified source snapshot this closure contains
+116,922 declarations. The replay permits only
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound},
+and rejects unsafe or partial dependencies. Both commands completed
+successfully. Source hashes and reproduction instructions are
+provided with the package.

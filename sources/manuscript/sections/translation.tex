@@ -1,0 +1,63 @@
+\section{Common analytic functions}\label{sec:analysis}
+
+For each auxiliary index \(a\) and column polynomial \(P\), define
+\[
+ f_{a,P}(z,z')=[u^a]P(e^z,e^{z'},(z'-\theta z+u_i)_{i=1}^m).
+\]
+For a monomial column this is
+\(\binom\alpha a e^{hz+kz'}(z'-\theta z)^{|\alpha|-|a|}\), or
+zero if \(a\not\leq\alpha\).
+At center \(j\) set
+\(z=j\log2+\log(1+t)\), \(z'=j\log3+\log(1+s)\).
+Writing \(\delta_i=\theta-r_i\), let
+\[
+ B_i=G_i(s)-\log(1+s)-r_i(G_i(t)-\log(1+t)),\quad
+ h_i=\delta_i\log(1+t)+B_i.
+\]
+The exact identity \(G_i(s)-r_iG_i(t)=z'-\theta z+h_i\)
+has no center-dependent error.
+
+\begin{lemma}\label{lem:translation}
+Every original row is a finite sum of scalar multiples of the common
+coefficient tests
+\([t^{\ell'_1}s^{\ell'_2}]f_{a,P}(z,z')\), with
+\(a\geq\beta\), \(wa\leq H\), and \(\ell'_1+\ell'_2<H/v_0\).
+The scalars are independent of \(P\). Their number per row is at most
+\[
+ C_H=(\lfloor H\rfloor+1)^m
+                  (\lfloor H/v_0\rfloor+1)^2,
+\]
+and each is bounded by \((\lfloor H\rfloor+1)^m\) times
+\begin{equation}\label{eq:translation}
+ \exp\{-\nu w(a-\beta)+HE_{\rm tr}\},\qquad
+ E_{\rm tr}=\frac\nu F+\frac{\log2}{v_0}
+                       +\frac{\nu+\log12}{w_*}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The scalar in the convolution with base indices \(d,e\) is
+\[
+ \binom a\beta[t^ds^e]\prod_i h_i^{a_i-\beta_i},
+ \qquad 0\leq d\leq\ell_1,\quad0\leq e\leq\ell_2.
+\]
+In its expansion let \(b_i\) factors be tails \(B_i\). A nonzero
+contribution requires \(\sum_iT_ib_i\leq d+e<H/v_0\), hence
+\(wb<H/F\). Because \(w_i-1<\log q_i\leq w_i\), its approximation
+factors are bounded by
+\(\exp(-\nu w(a-\beta)+\nu H/F+\nu H/w_*)\).
+On \(|t|=|s|=1/2\), logarithms have modulus at most \(\log2<1\),
+and \(|B_i|\leq3\). The two binomial factors cost at most
+\(4^{H/w_*}\), the tails at most \(3^{H/w_*}\), and Cauchy's
+coefficient estimate at most \(2^{H/v_0}\). This proves the bound
+after summing at most \((\lfloor H\rfloor+1)^m\) tail choices.
+Indeed, each auxiliary coordinate of \(a\) is at most \(\lfloor H\rfloor\),
+since \(w_i\geq1\). For a fixed \(a\), the convolution has exactly
+\((\ell_1+1)(\ell_2+1)\) possible splits, which is at most
+\((\lfloor H/v_0\rfloor+1)^2\). Thus the combined counting and
+scalar overhead per row is bounded by
+\[
+ Q_H=(\lfloor H\rfloor+1)^{2m}
+                  (\lfloor H/v_0\rfloor+1)^2.
+\]
+All data other than \(H\) are fixed, so \(\log Q_H=O(\log H)=o(H)\).
+\end{proof}

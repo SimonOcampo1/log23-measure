@@ -1,0 +1,12 @@
+Copyright 2026 Rohit Kumar Jha.
+
+Original Lean code and publication scripts: Apache License, Version 2.0.
+See LICENSES/Apache-2.0.txt for the full license.
+
+Manuscript, manuscript sources, and original documentation:
+Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Third-party material retains its existing notices and licenses.
+See sources/lean/NOTICE.txt, the vendor license files, and release/RIGHTS.txt.
+Neither license overrides the retained third-party licenses.

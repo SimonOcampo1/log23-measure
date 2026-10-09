@@ -1,0 +1,17 @@
+MANUSCRIPT AND ORIGINAL DOCUMENTATION
+
+Copyright 2026 Rohit Kumar Jha.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+ORIGINAL LEAN CODE AND PUBLICATION SCRIPTS
+
+Licensed under the Apache License, Version 2.0.
+The full software license is included as LICENSE in the Lean archive.
+
+THIRD-PARTY MATERIAL
+
+Third-party code retains its original notices and licenses. See the
+Lean package's NOTICE.txt and vendor license files.
+The manuscript's license does not relicense the bundled software.
