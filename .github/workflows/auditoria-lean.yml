@@ -45,6 +45,17 @@ jobs:
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
       - name: Caché de mathlib
         run: time lake exe cache get
+      - name: Ajuste mínimo del lakefile (globs para compilar el cierre de imports desde cero)
+        run: |
+          python3 - <<'PY'
+          s = open("lakefile.toml").read()
+          s = s.replace('roots = ["LogarithmExtension.LogRatioMain", "LogarithmExtension.LogRatioAverageAudit"]',
+                        'roots = ["LogarithmExtension.LogRatioMain", "LogarithmExtension.LogRatioAverageAudit"]\nglobs = ["LogarithmExtension.+"]')
+          s = s.replace('roots = ["OAI.NumberTheory.PiExponent.Statement"]',
+                        'roots = ["OAI.NumberTheory.PiExponent.Statement"]\nglobs = ["OAI.+"]')
+          open("lakefile.toml", "w").write(s)
+          PY
+          git diff lakefile.toml
       - name: Build
         run: time lake build LogarithmExtension.LogRatioMain LogarithmExtension.LogRatioAverageAudit
       - name: Enunciado del paper y axiomas usados
