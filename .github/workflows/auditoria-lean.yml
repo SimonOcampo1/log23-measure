@@ -29,7 +29,8 @@ jobs:
         run: python3 scripts/check_integrity.py
       - name: Sin sorry/admit/axiom en el código propio
         run: |
-          ! grep -rnwE 'sorry|admit|axiom' --include='*.lean' LogarithmExtension PaperStatement.lean || (echo "encontrado"; exit 1)
+          # declaraciones axiom y tácticas sorry/admit (las menciones en comentarios no cuentan; #print axioms y el replay son la garantía real)
+          ! grep -rnE '^\s*(private |protected )?axiom |\bsorry\b|\badmit\b' --include='*.lean' LogarithmExtension PaperStatement.lean || (echo "encontrado"; exit 1)
       - name: Vendor de OpenAI idéntico a la revisión fijada
         run: |
           git clone -q https://github.com/openai/math /tmp/oai
