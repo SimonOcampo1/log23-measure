@@ -1,0 +1,49 @@
+name: Auditoria Lean (build + replay del kernel)
+
+on:
+  push:
+    branches: [auditoria]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    defaults:
+      run:
+        working-directory: sources/lean
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Liberar disco del runner
+        working-directory: .
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+      - name: Integridad de la publicación (hashes)
+        working-directory: .
+        run: python3 scripts/check_integrity.py
+      - name: Sin sorry/admit/axiom en el código propio
+        run: |
+          ! grep -rnwE 'sorry|admit|axiom' --include='*.lean' LogarithmExtension PaperStatement.lean || (echo "encontrado"; exit 1)
+      - name: Vendor de OpenAI idéntico a la revisión fijada
+        run: |
+          git clone -q https://github.com/openai/math /tmp/oai
+          git -C /tmp/oai checkout -q adc7f1241b42e322a6451854ab7e4b4c146bf78a
+          diff -r /tmp/oai/lean/OAI vendor/openai-math/lean/OAI && echo "vendor OK"
+      - name: Instalar elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Caché de mathlib
+        run: time lake exe cache get
+      - name: Build
+        run: time lake build LogarithmExtension.LogRatioMain LogarithmExtension.LogRatioAverageAudit
+      - name: Enunciado del paper y axiomas usados
+        run: lake env lean PaperStatement.lean | tee statement.txt
+      - name: Replay en kernel limpio
+        run: time lake env lean --run VerifyLogRatioComponents.lean
